@@ -30,7 +30,10 @@ export default function Movies() {
   };
   return (
     <>
-      <input className="col-4 md-3" onChange={searching} type="text"></input>
+      <input className="col-4 md-3 m-3  " onChange={searching} type="text"></input>
+      <button className="btn btn-outline-success " type="submit">
+                Search
+              </button>
       <li className="page-item"></li>
       <div className="row row-cols-1 row-cols-md-3 g-4 p-4">
         {movies.map((Movie) => {
