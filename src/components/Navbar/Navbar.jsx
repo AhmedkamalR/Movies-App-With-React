@@ -82,7 +82,7 @@ export default function Navbar() {
                 Register
               </NavLink>
             </li>
-            <form className="d-flex">
+            {/* <form className="d-flex">
               <input
                 className="form-control me-1"
                 type="search"
@@ -92,7 +92,7 @@ export default function Navbar() {
               <button className="btn btn-outline-success " type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
           </ul>
         </div>
       </div>

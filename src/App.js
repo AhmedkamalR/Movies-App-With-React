@@ -10,6 +10,7 @@ import MovieDetails from "./pages/MovieDetails";
 // import Home from './components/Home/Home';
 // import Search from './components/search/Search.jsx';
 
+
 function App() {
   return (
     <div className="App ">

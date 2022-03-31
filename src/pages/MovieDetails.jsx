@@ -30,12 +30,12 @@ export default function MovieDetails(props) {
             <div className="card-body">
               <h5 className="card-title">Name: {props.location.state.title}</h5>
               <p className="card-text">Description: {props.location.state.overview} </p>
-              <p className="card-text">Vote:  {props.location.state.vote_average} </p>          
+              <p className="card-text">Rate:  {props.location.state.vote_average} </p>          
               <p className="card-text" >Popularity : {props.location.state.popularity}   
               <FontAwesomeIcon icon={["eye", "eye"]} size="lg" />      
               </p>        
               <p className="card-text">
-                <small className="text-muted">date Release : {props.location.state.release_date}</small>
+                <small className="text-muted">Date Release : {props.location.state.release_date}</small>
               </p>
             </div>
           </div>
