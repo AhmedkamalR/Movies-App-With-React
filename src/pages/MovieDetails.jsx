@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getMoviesDetails } from "../components/network/MoviesAPIs";
-export default function MovieDetails(props) {
-  console.log(props);
-  const [MovieDetails, setMoviesDetails] = useState({});
+import axios from "axios";
+export default function MovieDetails() {
+  const [MovieDetails, setMovieDetails] = useState({});
   const params = useParams();
   useEffect(() => {
-    getMoviesDetails(params)
-      .then((res) => setMoviesDetails(res.data.results))
-      .catch((err) => console.log(err));
+    axios.get(`https://api.themoviedb.org/3/movie/${params.id}popular?api_key=b7fcc38e46bc53000e574978b2731a2e`)
+    .then((res) =>{setMovieDetails(res.data)
+  console.log(res.data)})
+    .catch((err) => console.log(err));
   }, []);
 
   return (
@@ -21,21 +21,21 @@ export default function MovieDetails(props) {
           <div className="col-md-4">
             <img
               src=
-              {`https://image.tmdb.org/t/p/w500/${props.location.state.poster_path}`}
+              {`https://image.tmdb.org/t/p/w500${MovieDetails.poster_path}`}
               className="img-fluid rounded-start"
               alt={MovieDetails.title}
             />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">Name: {props.location.state.title}</h5>
-              <p className="card-text">Description: {props.location.state.overview} </p>
-              <p className="card-text">Rate:  {props.location.state.vote_average} </p>          
-              <p className="card-text" >Popularity : {props.location.state.popularity}   
+              <h5 className="card-title">Name: {MovieDetails.title}</h5>
+              <p className="card-text">Description: {MovieDetails.overview} </p>
+              <p className="card-text">Rate:  {MovieDetails.vote_average} </p>          
+              <p className="card-text" >Popularity : {MovieDetails.popularity}   
               <FontAwesomeIcon icon={["eye", "eye"]} size="lg" />      
               </p>        
               <p className="card-text">
-                <small className="text-muted">Date Release : {props.location.state.release_date}</small>
+                <small className="text-muted">Date Release : {MovieDetails.release_date}</small>
               </p>
             </div>
           </div>

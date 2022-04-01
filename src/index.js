@@ -8,10 +8,14 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 // import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { store } from "./store/store";
 library.add(fab, fas);
 ReactDOM.render(
   <React.StrictMode>
+   <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 export default function Navbar() {
+  const favNumber = useSelector((state) => state.favNumber);
+
   return (
     <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
       <div className="container-fluid">
@@ -22,11 +27,11 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-            <NavLink
+              <NavLink
                 className="nav-link "
                 activeStyle={{
                   fontWeight: "bold",
-                  color: "Green",
+                  color: "red",
                 }}
                 exact
                 to="/"
@@ -35,7 +40,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-            <NavLink
+              <NavLink
                 className="nav-link"
                 activeStyle={{
                   fontWeight: "bold",
@@ -48,19 +53,24 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <NavLink
-              className="nav-link"
+                className="nav-link"
                 activeStyle={{
                   fontWeight: "bold",
                   color: "red",
                 }}
                 to="/Favourites"
               >
-                Favourites
+                <span style={{ color: "white" }}> Favourites </span> {favNumber}
+                <FontAwesomeIcon
+                  style={{ color: "gold" }}
+                  icon={faHeart}
+                  size="lg"
+                ></FontAwesomeIcon>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-              className="nav-link"
+                className="nav-link"
                 activeStyle={{
                   fontWeight: "bold",
                   color: "red",
@@ -72,7 +82,7 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <NavLink
-              className="nav-link"
+                className="nav-link"
                 activeStyle={{
                   fontWeight: "bold",
                   color: "red",
