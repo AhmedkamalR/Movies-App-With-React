@@ -98,23 +98,24 @@ export default function Navbar() {
                 Register
               </NavLink>
             </li>
-            <button
-                  onClick={handelLangaugeChange}
-                  className="text-gray-300 ml-2 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  {language}
-                </button>
-            {/* <form className="d-flex">
+            <form className="d-flex">
               <input
-                className="form-control me-1"
+                className="form-control mx-0"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
               <button className="btn btn-outline-success " type="submit">
-                Search
+              {language === "en" ? "Search " : " بحث "}
               </button>
-            </form> */}
+            </form>
+            <button
+                  onClick={handelLangaugeChange}
+                  className="btn btn-outline-warning mx-5"
+                >
+                  {language}
+                </button>
+
           </ul>
         </div>
       </div>
