@@ -47,7 +47,7 @@ export default function Movies() {
       <button className="btn btn-outline-success " type="submit">
               {language === "en" ? "Search " : " بحث "}
               </button> */}
-      <div className="row row-cols-1 row-cols-md-3 p-3">
+      <div className="row row-cols-1 row-cols-md-3 g-3 p-4">
         {movies.map((Movie) => {
           return (
             <div className="col mb-4" key={Movie.id}>

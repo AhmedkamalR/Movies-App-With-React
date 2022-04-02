@@ -58,7 +58,7 @@ export default function MovieCard({ movie }) {
               color: "gold",
               position: "absolute",
               top: "5",
-              left: "83%",
+              left: "80%",
             }}
             onClick={() => {
               removeFromFav(movie.id);
