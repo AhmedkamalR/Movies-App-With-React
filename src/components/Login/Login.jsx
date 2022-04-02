@@ -131,7 +131,7 @@ function Login(props) {
             Login
           </Button>
         </div>
-        <p className="mt-5 text-muted">&copy; 2021-2022 </p>
+        <p className="mt-5 text-muted">©Copyright; 2021-2022 & Ahmed kamal </p>
       </Form>
     </Container>
   );

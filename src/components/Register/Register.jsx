@@ -185,7 +185,7 @@ function Register() {
       <div className="d-grid">
         <Button variant="primary" size="lg">Register</Button>
       </div>
-      <p className="mt-5 text-muted">&copy; 2021-2022 </p>
+      <p className="mt-5 text-muted">©Copyright; 2021-2022 & Ahmed kamal </p>
     </Form>
   </Container>
   );
