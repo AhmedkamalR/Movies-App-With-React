@@ -1,5 +1,5 @@
-import { ADD_FAV } from "../action";
-import { REMOVE_FAV } from "../action";
+import { ADD_FAV } from "../actions/types";
+import { REMOVE_FAV } from "../actions/types";
 
 const INITIAL_STATE = [];
 
