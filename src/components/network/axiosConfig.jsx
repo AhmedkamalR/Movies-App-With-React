@@ -1,4 +1,7 @@
 import axios from "axios";
+import { store } from './../../store/store';
+import { setLoader } from './../../store/actions/loader';
+
 
 export const axiosInstance = axios.create({
   baseURL: "https://api.themoviedb.org",
@@ -26,12 +29,15 @@ axiosInstance.interceptors.response.use(
     // HIDE LOADER
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
+    store.dispatch(setLoader(false))
+
     return response;
   },
   function (error) {
     // HIDE LOADER
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
+    store.dispatch(setLoader(false))
     return Promise.reject(error);
   }
 );

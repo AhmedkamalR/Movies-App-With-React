@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect , useState} from "react";
 import { axiosInstance } from "../components/network/axiosConfig";
 import MovieCard from "../components/MovieCard/MovieCard";
 import {  Button, Container } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { getMoviesList } from "../store/actions/movies";
+import { useSelector } from "react-redux";
+
 export default function Movies() {
-  const [movies, setMovies] = useState([]);
+  const [moviess, setMovies] = useState([]);
   const [page, setpage] = useState(1);
+  const movies = useSelector((state) => state.movies.list);
+  const dispatch = useDispatch();
   useEffect(() => {
-    axiosInstance
-      .get(`https://api.themoviedb.org/3/movie/popular?api_key=b7fcc38e46bc53000e574978b2731a2e&page=${page}`)
-      .then((res) => setMovies(res.data.results))
-      .catch((err) => console.log(err));
-  }, [page]);
+    dispatch(getMoviesList());
+
+  }, []);
    const searching = (e) => {
     console.log("is searching");
     axiosInstance
@@ -52,9 +56,9 @@ export default function Movies() {
         })}
       </div>
       <Container className="d-flex justify-content-around">
-      <Button style={{width:"100px"}} onClick={()=>{changePage("previous")}}  variant="outline-danger">previous</Button>
+       <Button style={{width:"100px"}} onClick={()=>{changePage("previous")}}  variant="outline-danger">previous</Button>
           <Button style={{width:"100px"}} onClick={()=>{changePage("next")}}  variant="outline-primary">Next</Button>
-        </Container>
+      </Container>
     </>
   );
 }
