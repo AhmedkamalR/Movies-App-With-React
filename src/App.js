@@ -1,8 +1,10 @@
-import React, { Suspense } from "react";
+import React, { Suspense ,useState} from "react";
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Loader from './components/Loader/Loader';
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 const Login = React.lazy(() => import("./components/Login/Login"));
 const Register = React.lazy(() =>
@@ -12,12 +14,20 @@ const NotFound = React.lazy(() => import("./pages/NotFound.jsx"));
 const Movies = React.lazy(() => import("./pages/Movies"));
 const MovieDetails = React.lazy(() => import("./pages/MovieDetails"));
 const Favourite = React.lazy(() => import("./components/Favourites/Favourite"));
+export const LanguageContext = React.createContext();
 
 function App() {
+  const [language, setLanguage] = useState("en");
   return (
     <div className="App ">
+     <Provider store={store}>
+      <LanguageContext.Provider value={{ language, setLanguage }}>
       <BrowserRouter>
         <Navbar />
+        <div
+            className="container mx-auto"
+            dir={language === "en" ? "ltr" : "rtl"}
+          >
         <Suspense fallback={<Loader />}>
         <Switch>
           <Route path={"/"} exact component={Login} />
@@ -28,9 +38,12 @@ function App() {
           <Route path={"/Login"} exact component={Login} />
           <Route path={"/Register"} exact component={Register} />
           <Route path={"*"} component={NotFound} />
-        </Switch>
+        </Switch>       
         </Suspense>
+        </div>
       </BrowserRouter>
+      </LanguageContext.Provider>
+    </Provider>
     </div>
   );
 }

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { LanguageContext } from "../App";
 import axios from "axios";
 export default function MovieDetails() {
   const [MovieDetails, setMovieDetails] = useState({});
+  const { language } = useContext(LanguageContext);
   const params = useParams();
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${params.id}popular?api_key=b7fcc38e46bc53000e574978b2731a2e`)
@@ -15,7 +16,7 @@ export default function MovieDetails() {
 
   return (
     <>
-      <h3 className="card mb-3 p-4">Movie Details</h3>
+      <h3 className="card mb-3 p-4">{language === "en" ? "Movie Details" : "تفاصيل عن الفيلم"}</h3>
       <div className="card mb-3 p-3">
         <div className="row g-0">
           <div className="col-md-4">
@@ -28,14 +29,14 @@ export default function MovieDetails() {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">Name: {MovieDetails.title}</h5>
-              <p className="card-text">Description: {MovieDetails.overview} </p>
-              <p className="card-text">Rate:  {MovieDetails.vote_average} </p>          
-              <p className="card-text" >Popularity : {MovieDetails.popularity}   
+              <h5 className="card-title"> {language === "en" ? "Name" : "الاسم"}: {MovieDetails.title}</h5>
+              <p className="">{language === "en" ? "over View" : "قصة الفيلم"} : {MovieDetails.overview}</p>
+              <p className="card-text">{language === "en" ? "Rate" : "تقييم"}: {MovieDetails.vote_average} </p>          
+              <p className="card-text" >{language === "en" ? "popularity" : "المشاهدات"}: {MovieDetails.popularity} 
               <FontAwesomeIcon icon={["eye", "eye"]} size="lg" />      
               </p>        
               <p className="card-text">
-                <small className="text-muted">Date Release : {MovieDetails.release_date}</small>
+                <small className="text-muted">{language === "en" ? "Release date" : "تاريخ الاصدار"}: {MovieDetails.release_date}</small>
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "../MovieCard/style.css";
 import { Link } from "react-router-dom";
 import { addToFavourites } from "../../store/actions/action";
@@ -6,8 +6,11 @@ import { deletefromFavourites } from "../../store/actions/action";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { LanguageContext } from "../../App";
+
 export default function MovieCard({ movie }) {
  const favourites = useSelector((state) => state.favourites);
+ const { language } = useContext(LanguageContext);
 
   const [fav, setFav] = useState(movie.favourite);
   const dispatch = useDispatch();
@@ -36,7 +39,7 @@ export default function MovieCard({ movie }) {
         alt={movie.title}
       />
       <div className="card-body">
-        <h5 className="card-title">Name: {movie.original_title} </h5>
+        <h5 className="card-title">{language === "en" ? "Name" : "الاسم"}: {movie.title}</h5>
         {!isFave(movie.id) ? (
           <FontAwesomeIcon
             style={{
@@ -64,13 +67,14 @@ export default function MovieCard({ movie }) {
             size="3x"
           ></FontAwesomeIcon>
         )}
-        <p className="card-text">Rating : {movie.vote_average} </p>
-        <p className="card-text">Voters : {movie.vote_count} </p>
+        <p className="card-text">{language === "en" ? "Rate" : "تقييم"}: {movie.vote_average} </p>
+        <p className="card-text">{language === "en" ? "Voters" : " عدد الاصوات"}: {movie.vote_count} </p>
         <p className="card-text">
-          popularity : {movie.popularity}
-          <FontAwesomeIcon icon={["eye", "eye"]} size="lg" />
+        {language === "en" ? "popularity" : "المشاهدات"}: {movie.popularity}
+                  <FontAwesomeIcon icon={["eye", "eye"]} size="lg" />
         </p>
-        <p className="card-text">date Release : {movie.release_date} </p>
+        <p className="card-text">{language === "en" ? "Release date" : "تاريخ الاصدار"}: {movie.release_date} </p>
+
         <Link
           to={{
             pathname: `/movies/${movie.id}`,
@@ -78,7 +82,7 @@ export default function MovieCard({ movie }) {
           }}
           className="btn btn-primary"
         >
-          Details
+          {language === "en" ? "Details" : " تفاصيل "}
         </Link>
       </div>
     </div>

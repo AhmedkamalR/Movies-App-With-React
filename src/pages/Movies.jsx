@@ -1,20 +1,22 @@
-import { useEffect , useState} from "react";
+import { useEffect , useState,useContext} from "react";
 import { axiosInstance } from "../components/network/axiosConfig";
 import MovieCard from "../components/MovieCard/MovieCard";
 import {  Button, Container } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getMoviesList } from "../store/actions/movies";
 import { useSelector } from "react-redux";
+import { LanguageContext } from "../App";
 
 export default function Movies() {
   const [moviess, setMovies] = useState([]);
   const [page, setpage] = useState(1);
   const movies = useSelector((state) => state.movies.list);
   const dispatch = useDispatch();
+  const { language } = useContext(LanguageContext);
   useEffect(() => {
-    dispatch(getMoviesList());
+    dispatch(getMoviesList(language));
 
-  }, []);
+  }, [language]);
    const searching = (e) => {
     console.log("is searching");
     axiosInstance
@@ -43,10 +45,9 @@ export default function Movies() {
     <>
       <input className="col-4 md-1 m-2 float-sm-right "  onChange={searching} type="text"></input>
       <button className="btn btn-outline-success " type="submit">
-                Search
+              {language === "en" ? "Search " : " بحث "}
               </button>
-      <li className="page-item"></li>     
-      <div className="row row-cols-1 row-cols-md-3 g-3 p-2">
+      <div className="row row-cols-1 row-cols-md-3 p-3">
         {movies.map((Movie) => {
           return (
             <div className="col mb-4" key={Movie.id}>

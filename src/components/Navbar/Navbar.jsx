@@ -1,12 +1,18 @@
-import React from "react";
+import React,{ useContext} from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
+import { LanguageContext } from "../../App";
+
 export default function Navbar() {
   const favNumber = useSelector((state) => state.favNumber);
+  const { language, setLanguage } = useContext(LanguageContext);
 
+  const handelLangaugeChange = () => {
+    language === "en" ? setLanguage("ar") : setLanguage("en");
+  };
   return (
     <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
       <div className="container-fluid">
@@ -92,6 +98,12 @@ export default function Navbar() {
                 Register
               </NavLink>
             </li>
+            <button
+                  onClick={handelLangaugeChange}
+                  className="text-gray-300 ml-2 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  {language}
+                </button>
             {/* <form className="d-flex">
               <input
                 className="form-control me-1"
