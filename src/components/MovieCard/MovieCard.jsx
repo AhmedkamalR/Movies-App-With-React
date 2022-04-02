@@ -46,7 +46,7 @@ export default function MovieCard({ movie }) {
               color: "gray",
               position: "absolute",
               top: "5",
-              left: "83%",
+              left: "80%",
             }}
             onClick={addToFav}
             icon={faHeart}
