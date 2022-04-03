@@ -57,8 +57,9 @@ export default function Movies() {
         })}
       </div>
       <Container className="d-flex justify-content-around">
-       <Button style={{width:"100px"}} onClick={()=>{changePage("previous")}}  variant="outline-danger">previous</Button>
-          <Button style={{width:"100px"}} onClick={()=>{changePage("next")}}  variant="outline-primary">Next</Button>
+       <Button style={{width:"100px"}} onClick={()=>{changePage("previous")}}  variant="danger">previous</Button>
+          <Button style={{width:"100px"}} onClick={()=>{changePage("next")}}  variant="primary">Next
+          </Button>
       </Container>
     </>
   );

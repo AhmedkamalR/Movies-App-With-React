@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
 .container {
 	padding-bottom: 3rem;
 }
@@ -8,12 +7,14 @@ img {
 	-webkit-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-	overflow-x: hidden;
+
 }
 .card img:hover {
 	-webkit-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	transform: scale(1.1);
+
+
 }
 
 @media (max-width: 768px) {

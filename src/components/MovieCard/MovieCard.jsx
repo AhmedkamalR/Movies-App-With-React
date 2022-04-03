@@ -31,7 +31,7 @@ export default function MovieCard({ movie }) {
     dispatch(deletefromFavourites(movieId));
   };
   return (
-    <div className="card h-20 ">
+    <div className="card  ">
       <img
         src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         className="card-img-top"

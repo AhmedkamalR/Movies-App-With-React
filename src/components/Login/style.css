@@ -1,5 +1,6 @@
 #main-container {
     place-items: center center;
+    margin-top: 20px;
   }
   
   #sign-in-form {

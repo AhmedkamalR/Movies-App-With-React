@@ -105,13 +105,13 @@ export default function Navbar() {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success " type="submit">
-              {language === "en" ? "Search " : " بحث "}
+              <button className="btn btn-outline-success mx-1 " type="submit">
+              {language === "en" ? "Search" : " بحث "}
               </button>
             </form>
             <button
                   onClick={handelLangaugeChange}
-                  className="btn btn-outline-warning mx-5"
+                  className="btn btn-warning mx-5"
                 >
                   {language}
                 </button>

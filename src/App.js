@@ -2,10 +2,12 @@ import React, { Suspense ,useState} from "react";
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home.jsx";
 import Loader from './components/Loader/Loader';
 import { Provider } from "react-redux";
 import store from "./store/store";
 
+// const Home = React.lazy(() => import("./components/Home/Home.jsx"));
 const Login = React.lazy(() => import("./components/Login/Login"));
 const Register = React.lazy(() =>
   import("./components/Register/Register")
@@ -19,7 +21,7 @@ export const LanguageContext = React.createContext();
 function App() {
   const [language, setLanguage] = useState("en");
   return (
-    <div className="App ">
+    <div className="App scroll-hide">
      <Provider store={store}>
       <LanguageContext.Provider value={{ language, setLanguage }}>
       <BrowserRouter>
@@ -30,7 +32,7 @@ function App() {
           >
         <Suspense fallback={<Loader />}>
         <Switch>
-          <Route path={"/"} exact component={Login} />
+          <Route path={"/"} exact component={Home} />
           {/* <Route path={"/"} exact component={Search} /> */}
           <Route path="/Movies" exact component={Movies} />
           <Route path="/Movies/:id" exact component={MovieDetails} />
