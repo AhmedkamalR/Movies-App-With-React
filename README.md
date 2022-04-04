@@ -1,15 +1,19 @@
 # THis is an overView of the Movie App
-# Movies Main Page
-![Screenshot from 2022-03-31 00-05-02](https://user-images.githubusercontent.com/87860547/161059878-5342d1e0-69b7-4366-a106-3f2e2f7485f9.png)
+# live demo :
+ https://movieslandapp.herokuapp.com/
+# Home
+![Screenshot from 2022-04-03 02-29-27](https://user-images.githubusercontent.com/87860547/161406102-a6bbd895-9609-4acb-ac47-0c479ee6bc3b.png)
+
+# Movies Page
+![Screenshot from 2022-04-03 02-31-41](https://user-images.githubusercontent.com/87860547/161406141-6495feb6-2af8-41b4-b161-744cda3602ee.png)
 
  # Movies Details
- ![Screenshot from 2022-03-31 00-05-16](https://user-images.githubusercontent.com/87860547/161056281-6a92a862-af44-480b-91f7-ecd7397e6a99.png)
-
+![Screenshot from 2022-04-03 02-34-27](https://user-images.githubusercontent.com/87860547/161406181-2a7275f0-9d96-4522-aaa7-0bf8d530574e.png)
+# Favourite
+![12](https://user-images.githubusercontent.com/87860547/161406311-b7ded27c-620d-49d5-b135-062ce78e9ce0.png)
 
 # Login 
 ![Screenshot from 2022-03-31 00-05-09](https://user-images.githubusercontent.com/87860547/161056073-f78d5a02-9d58-4609-82ab-0dd56a6586ba.png)
 # Register 
 ![Screenshot from 2022-03-31 00-07-47](https://user-images.githubusercontent.com/87860547/161060182-d8a09fab-776f-4526-87e2-907293bed742.png)
 
-# search is Added
-![search](https://user-images.githubusercontent.com/87860547/161065060-82e06d10-667a-4997-af6b-c31fff72fe03.png)
