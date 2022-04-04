@@ -43,10 +43,6 @@ export default function Movies() {
 
   return (
     <>
-      {/* <input className="col-4 md-1 m-2 float-sm-right "  onChange={searching} type="text"></input>
-      <button className="btn btn-outline-success " type="submit">
-              {language === "en" ? "Search " : " بحث "}
-              </button> */}
       <div className="row row-cols-1 row-cols-md-3 g-3 p-4">
         {movies.map((Movie) => {
           return (

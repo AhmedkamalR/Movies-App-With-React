@@ -31,7 +31,7 @@ export default function MovieCard({ movie }) {
     dispatch(deletefromFavourites(movieId));
   };
   return (
-    <div className="card  ">
+    <div className="card h-20 ">
       <img
         src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         className="card-img-top"
@@ -39,7 +39,7 @@ export default function MovieCard({ movie }) {
         alt={movie.title}
       />
       <div className="card-body">
-        <h5 className="card-title">{language === "en" ? "Name" : "الاسم"}: {movie.title}</h5>
+        <h5 className="card-title"> {movie.title}</h5>
         {!isFave(movie.id) ? (
           <FontAwesomeIcon
             style={{
