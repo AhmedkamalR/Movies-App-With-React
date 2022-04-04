@@ -1,6 +1,6 @@
 # THis is an overView of the Movie App
 # live demo :
- https://movieslandapp.herokuapp.com/
+https://movieslandapp.herokuapp.com/
 # Home
 ![Screenshot from 2022-04-03 02-29-27](https://user-images.githubusercontent.com/87860547/161406102-a6bbd895-9609-4acb-ac47-0c479ee6bc3b.png)
 
