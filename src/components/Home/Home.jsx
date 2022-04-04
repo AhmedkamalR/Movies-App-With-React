@@ -9,7 +9,7 @@ function Home (){
       <div className="top m-3">
 	<div className="columns">
 		<div className="column is-full featured_wrapper p-0">
-			<img src="https://raw.githubusercontent.com/brixiobodino/coffeholic/main/banner.jpg" class="featured"/>
+			<img src="https://raw.githubusercontent.com/brixiobodino/coffeholic/main/banner.jpg" className="featured"/>
 			<div className="title_wrapper">
 				<span className="has-text-white">Trending Today</span>
 				<h1 className="title is-1 has-text-white">The Untold Story of the great Valley and what is behind mountain</h1>
